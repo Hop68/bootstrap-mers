@@ -1,0 +1,381 @@
+
+:root {
+  --azul: #0066ff;
+  --rojo: #ff3a4e;
+  --amarillo: #ffde59;
+  --verde: #2ecc71;
+  --fondo: #f8f9fa;
+  --texto: #2c3e50;
+  --sombra: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --borde: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cambioFondo {
+  0% { background-color: #f8f9fa; }
+  50% { background-color: #fff0f5; }
+  100% { background-color: #f0fff0; }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+  animation: cambioFondo 20s infinite alternate;
+}
+
+
+header {
+  background: linear-gradient(135deg, var(--azul), var(--verde));
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: white;
+  color: var(--azul);
+  transform: translateY(-3px);
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+
+.testimonios {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+.testimonio {
+  font-style: italic;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonio cite {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--azul);
+}
+
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.redes a {
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+}
+
+.redes img {
+  width: 32px;
+  height: 32px;
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+
+.productos-destacados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.producto {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: all 0.4s ease;
+  border: var(--borde);
+}
+
+.producto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  animation: flotar 3s ease-in-out infinite alternate;
+}
+
+.producto h3 {
+  color: var(--azul);
+  padding: 1rem 1rem 0.5rem;
+  font-size: 1.3rem;
+}
+
+.producto p {
+  color: #666;
+  padding: 0 1rem 1.5rem;
+}
+
+
+.historia, .mision {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra);
+}
+
+
+.formulario-contacto {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--azul);
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: var(--borde);
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+form button {
+  background: var(--rojo);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+form button:hover {
+  background: var(--amarillo);
+  color: var(--texto);
+}
+
+
+.volver-inicio {
+  display: block;
+  width: fit-content;
+  background: linear-gradient(135deg, var(--rojo), var(--amarillo));
+  color: #f0fff0;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin: 3rem auto;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: var(--sombra);
+  transition: all 0.3s ease;
+  animation: latido 2s infinite;
+  text-align: center;
+}
+
+.volver-inicio:hover {
+  transform: scale(1.05);
+  animation: none;
+}
+
+
+footer {
+  background: linear-gradient(135deg, var(--azul), var(--verde));
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .productos-destacados {
+    grid-template-columns: 1fr;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05); 
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #fff8f0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .logo-container {
+    margin-bottom: 15px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.imagen-destacada {
+  margin: 30px auto;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.imagen-historia {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imagen-historia:hover {
+  transform: scale(1.02);
+}
+
+.pie-foto {
+  font-style: italic;
+  color: #666;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .imagen-destacada {
+    margin: 20px 0;
+    border-radius: 0;
+  }
+}
